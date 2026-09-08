@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root { --background: #05070a; --foreground: #f8fafc; }
+* { box-sizing: border-box; }
+html { background: var(--background); }
+body { margin: 0; background: radial-gradient(circle at 15% 10%, rgba(34,211,238,.06), transparent 30%), radial-gradient(circle at 85% 30%, rgba(59,130,246,.04), transparent 30%), var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+button, textarea { font: inherit; }
+::selection { background: rgba(34,211,238,.25); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #05070a; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
