@@ -1,4 +1,4 @@
-import { analyzePrompt } from "./detector";
+import { detectPromptInjection } from "./detector";
 
 export type TestCase = { prompt: string; malicious: boolean; category: string };
 
@@ -28,7 +28,7 @@ export const TEST_CASES: TestCase[] = [
 export function evaluateDataset() {
   let tp = 0, tn = 0, fp = 0, fn = 0;
   for (const item of TEST_CASES) {
-    const result = analyzePrompt(item.prompt, "balanced");
+    const result = detectPromptInjection(item.prompt, "balanced");
     const predicted = result.blocked;
     if (item.malicious && predicted) tp++;
     else if (!item.malicious && !predicted) tn++;
